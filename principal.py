@@ -51,10 +51,10 @@ def resolver_cadena(expCad, ts) :
 def resolver_expreision_logica(expLog, ts) :
     exp1 = resolver_expresion_aritmetica(expLog.exp1, ts)
     exp2 = resolver_expresion_aritmetica(expLog.exp2, ts)
-    if expLog.operador == OPERACION_LOGICA.MAYOR_QUE : return exp1 + exp2
-    if expLog.operador == OPERACION_LOGICA.MENOR_QUE : return exp1 - exp2
-    if expLog.operador == OPERACION_LOGICA.IGUAL : return exp1 * exp2
-    if expLog.operador == OPERACION_LOGICA.DIFERENTE : return exp1 / exp2
+    if expLog.operador == OPERACION_LOGICA.MAYOR_QUE : return exp1 > exp2
+    if expLog.operador == OPERACION_LOGICA.MENOR_QUE : return exp1 < exp2
+    if expLog.operador == OPERACION_LOGICA.IGUAL : return exp1 == exp2
+    if expLog.operador == OPERACION_LOGICA.DIFERENTE : return exp1 != exp2
 
 def resolver_expresion_aritmetica(expNum, ts) :
     if isinstance(expNum, ExpresionBinaria) :
